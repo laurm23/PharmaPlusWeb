@@ -1,0 +1,35 @@
+# Archivos compilados
+*.class
+*.jar
+*.war
+*.ear
+
+# Carpetas de compilación
+/build/
+/target/
+/bin/
+
+# Archivos del IDE
+.classpath
+.project
+.settings/
+.metadata/
+*.iml
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
+*~
+
+# No subir PDFs de documentación
+*.pdf
+
+# No subir archivos de base de datos locales
+*.db
+*.sqlite

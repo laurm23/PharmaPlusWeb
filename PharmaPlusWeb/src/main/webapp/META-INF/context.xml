@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Archivo de configuración de contexto para PharmaPlusWeb
+    Ubicación: META-INF/context.xml o TOMCAT_HOME/conf/Catalina/localhost/PharmaPlusWeb.xml
+-->
+<Context path="/PharmaPlusWeb" docBase="PharmaPlusWeb" reloadable="true">
+    
+    <!-- ================================== -->
+    <!-- DATASOURCE - POOL DE CONEXIONES -->
+    <!-- ================================== -->
+    
+    <Resource name="jdbc/PharmaPlusDB"
+              auth="Container"
+              type="javax.sql.DataSource"
+              
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/pharmaplus_db?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"
+              username="root"
+              password="Wewereinfinite!23"
+              
+              maxTotal="20"
+              maxIdle="10"
+              minIdle="5"
+              maxWaitMillis="10000"
+              
+              testOnBorrow="true"
+              testWhileIdle="true"
+              timeBetweenEvictionRunsMillis="30000"
+              minEvictableIdleTimeMillis="60000"
+              validationQuery="SELECT 1"
+              
+              removeAbandonedOnBorrow="true"
+              removeAbandonedTimeout="60"
+              logAbandoned="true" />
+    
+    <!-- ================================== -->
+    <!-- CONFIGURACIONES ADICIONALES -->
+    <!-- ================================== -->
+    
+    <!-- Manager: desactivar almacenamiento de sesiones en disco -->
+    <Manager pathname="" />
+    
+    <!-- JarScanner: acelerar inicio de aplicación -->
+    <JarScanner>
+        <JarScanFilter defaultPluggabilityScan="false" />
+    </JarScanner>
+    
+    <!-- Recursos estáticos cacheable -->
+    <Resources cachingAllowed="true" cacheMaxSize="100000" />
+    
+</Context>
